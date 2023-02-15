@@ -1,5 +1,5 @@
 import React from "react";
-
+import PropTypes from "prop-types";
 export default function Navbar(props) {
   return (
     <div>
@@ -43,4 +43,13 @@ export default function Navbar(props) {
       </nav>
     </div>
   );
+}
+
+Navbar.propTypes = {
+  topTitle: PropTypes.string,
+  items: PropTypes.array,
+};
+
+Navbar.defaultProps = {
+  topTitle: "TITLE"
 }
