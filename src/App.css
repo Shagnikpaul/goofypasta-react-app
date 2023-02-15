@@ -1,7 +1,8 @@
 p {
-  color: aliceblue;
+  color: rgb(108, 186, 255);
 }
 
-.text-center {
-  margin-top: 2%;
+
+.bcgl {
+  height: 800px;
 }
