@@ -12,7 +12,7 @@ export default function Navbar(props) {
               width="30"
               height="30"
             />
-            {props.topTitle}
+            {props.topTitle},{props.kok}
           </a>
           <button
             className="navbar-toggler"
@@ -46,7 +46,7 @@ export default function Navbar(props) {
 }
 
 Navbar.propTypes = {
-  topTitle: PropTypes.string,
+  topTitle: PropTypes.string.isRequired,
   items: PropTypes.array,
 };
 
