@@ -21,7 +21,7 @@ export default function About(props) {
     "😷",
     "🤗",
     "😢",
-    "🤫"
+    "🤫",
   ];
 
   const incCount = () => {
@@ -33,7 +33,10 @@ export default function About(props) {
   const [countText, setCountText] = useState(0);
   const [emoji, setEmoji] = useState("💖");
   return (
-    <div className="d-flex justify-content-around flex-column mb-3 vh-100">
+    <div
+      data-bs-theme={props.mode}
+      className="d-flex justify-content-around flex-column mb-3 vh-100 bg-body"
+    >
       <div className="p-2">
         <h1 className="display-1 text-center"> {emoji} About me.</h1>
       </div>

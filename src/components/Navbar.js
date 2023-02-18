@@ -1,9 +1,11 @@
 import React from "react";
-import PropTypes from "prop-types";
 export default function Navbar(props) {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav
+        className="navbar navbar-expand-lg bg-body-tertiary bg-dark"
+        data-bs-theme={props.mode}
+      >
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             <img
@@ -38,6 +40,8 @@ export default function Navbar(props) {
                 </a>
               </li>
             </ul>
+            <input type="checkbox" className="btn-check" id="btn-check" autoComplete="off" onClick={props.toggle}/>
+            <label className="btn btn-primary" htmlFor="btn-check">Enable {props.modeText} Mode</label>
           </div>
         </div>
       </nav>
@@ -45,11 +49,3 @@ export default function Navbar(props) {
   );
 }
 
-Navbar.propTypes = {
-  topTitle: PropTypes.string.isRequired,
-  items: PropTypes.array,
-};
-
-Navbar.defaultProps = {
-  topTitle: "TITLE"
-}
