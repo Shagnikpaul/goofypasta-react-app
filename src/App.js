@@ -1,5 +1,5 @@
 import "./App.css";
-import About from "./components/About";
+import About from "./components/Copypasta";
 import Navbar from "./components/Navbar";
 import { useState } from "react";
 
@@ -14,12 +14,12 @@ function App() {
      console.log("I RAN and mode changed to",modes);
   };
   return (
-    <>
-      <div>
-        <Navbar topTitle="Keke" kok="JOE" {...modes} toggle={toggleMode} />
+    <div className="min-vh-100 bg-body" data-bs-theme={modes.mode}>
+      <div className="bg-body min-vh-100" data-bs-theme={modes.mode}>
+        <Navbar topTitle="COPY" kok="PASTA" {...modes} toggle={toggleMode} />
         <About mode={modes.mode} />
       </div>
-    </>
+    </div>
   );
 }
 
