@@ -4,12 +4,12 @@ import Navbar from "./components/Navbar";
 import { useState } from "react";
 
 function App() {
-  const [modes, setModes] = useState({mode:"dark", modeText:"Light"});
+  const [modes, setModes] = useState({mode:"dark", modeText:"🌙"});
   const toggleMode = () => {
     if (modes.mode === "light") {
-      setModes({ mode: "dark", modeText: "Light" });
+      setModes({ mode: "dark", modeText: "🔆" });
     } else {
-      setModes({ mode: "light", modeText: "Dark" });
+      setModes({ mode: "light", modeText: "🌙" });
     }
      console.log("I RAN and mode changed to",modes);
   };

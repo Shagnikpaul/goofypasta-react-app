@@ -40,12 +40,20 @@ export default function Navbar(props) {
                 </a>
               </li>
             </ul>
-            <input type="checkbox" className="btn-check" id="btn-check" autoComplete="off" onClick={props.toggle}/>
-            <label className="btn btn-primary" htmlFor="btn-check">Enable {props.modeText} Mode</label>
+            <input
+              type="checkbox"
+              className="btn-check"
+              id="btn-check"
+              autoComplete="off"
+              onClick={props.toggle}
+            />
+            <label
+              className="btn btn-outline-primary d-flex align-items-center"
+              htmlFor="btn-check"
+            >{props.modeText}</label>
           </div>
         </div>
       </nav>
     </div>
   );
 }
-
