@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import {randomPostFromSub} from "justreddit";
-
+const { reddit} = require("@kindl3d/reddit.js");
 export default function About(props) {
   const emojis = [
     "😀",
@@ -29,16 +28,21 @@ export default function About(props) {
   const incCount = () => {
     setPara("LOADING... PLEASE FUCKING WAIT.")
     setDis(true);
+    setInfo({
+      author: "LOADING",
+      title: "LOADING",
+      url: "www.google.com",
+    });
     setCountText(countText + 1);
     const k = emojis[Math.floor(Math.random() * emojis.length)];
     setEmoji(k);
-    const options = { subReddit: "copypasta", sortType: "top", postGetLimit:10,excludeRaw:false};
-    randomPostFromSub(options).then((result) => {
-      setPara(result['content']);
-      setInfo({author:result['author'], title:result['title'], url:result['url']});
-      setDis(false);
+    reddit("copypasta").then( post => {
+        setPara(post['text']);
+        setInfo({author:post['author'], title:post['title'], url:post['permalink']});
+        setDis(false);
     });
-  };
+   
+}
 
   const [countText, setCountText] = useState(0);
   const [emoji, setEmoji] = useState("💖");
@@ -51,7 +55,9 @@ export default function About(props) {
       className="d-flex justify-content-center flex-column  bg-body container p-5"
     >
       <div className="p-2">
-        <h1 className="display-1 text-center"> {emoji} COPYPASTA GRABBER.</h1>
+        <h1 className="display-1 text-center">
+          {emoji} COPYPASTA FROM REDDIT. {emoji}
+        </h1>
       </div>
       <div className="p-2 flex-row d-flex justify-content-center  mt-3">
         <button
@@ -63,7 +69,14 @@ export default function About(props) {
           Click here to get a random cursed sentence.
         </button>
       </div>
-      <p className="text-center mb-5"> {(countText==0)?"Press the button! 😳😳":(countText==1?"Used 1 time.":`Used ${countText} times.`)}</p>
+      <p className="text-center mb-5">
+        {" "}
+        {countText === 0
+          ? "Press the button! 😳😳"
+          : countText === 1
+          ? "Used 1 time."
+          : `Used ${countText} times.`}
+      </p>
       <div className="">
         <h4 className="text-center mb-4">
           <a href={info["url"]}>{info["title"]}</a>

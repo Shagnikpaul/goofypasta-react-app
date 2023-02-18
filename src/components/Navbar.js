@@ -9,7 +9,7 @@ export default function Navbar(props) {
         data-bs-theme={props.mode}
       >
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <a className="navbar-brand" href="https://www.reddit.com/r/copypasta">
             <img
               src="https://media.tenor.com/0pO-d7FH3QgAAAAj/spongebob-meme-spongebob.gif"
               alt="Bootstrap"
