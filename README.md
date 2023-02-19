@@ -5,11 +5,12 @@
   <h1 align="center">GOOFY PASTA.</h1> 
   <p align="center"><b>A React app that displays random horrible and abominable sentences ever created by mankind from the <code>r/copypasta</code> subreddit.</b></p>
 </p>
-
-<p align="center">Stuff used <br>
+<br><br>
+<p align="center"><code>- Stuff used -</code><br><br>
 <img width="30" src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png">​  ​​​​​
 <img width="30" src="https://img.icons8.com/color/256/bootstrap.png">
 <img width="30" src="https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png">
+<br> ---------------------------
 </p>
 
 <br>
