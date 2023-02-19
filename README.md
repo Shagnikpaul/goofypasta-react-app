@@ -6,10 +6,17 @@
   <p align="center"><b>A React app that displays random horrible and abominable sentences ever created by mankind from the <code>r/copypasta</code> subreddit.</b></p>
 </p>
 
+<p align="center">Stuff used <br>
+<img width="30" src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-512.png">​  ​​​​​
+<img width="30" src="https://img.icons8.com/color/256/bootstrap.png">
+<img width="30" src="https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png">
+</p>
+
 <br>
 <br>
 <br>
 
+> 🤓 Content (**text only no images**) that might show up in this app can be "**Not safe for Work**". So I am warning you before proceeding further. 
 
 ## How to Run Locally
 
