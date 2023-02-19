@@ -19,7 +19,9 @@ function App() {
         <Navbar topTitle="COPY" kok="PASTA" {...modes} toggle={toggleMode} />
         <About mode={modes.mode} />
       </div>
-      <p className="text-center  blockquote-footer mb-0  mt-n5 moremar">Made with 🗿 by Shagnik Paul. —</p>
+      <p className="text-center  blockquote-footer mb-0  mt-n5 moremar">
+        Made with 🗿 by Shagnik Paul. —
+      </p>
     </div>
   );
 }

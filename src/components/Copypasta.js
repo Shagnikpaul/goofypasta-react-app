@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 const { reddit} = require("@kindl3d/reddit.js");
 export default function About(props) {
+  let debug_count = 0
   const emojis = [
     "😀",
     "😂",
@@ -23,8 +24,16 @@ export default function About(props) {
     "😳",
     "🤫",
   ];
-
-
+  let stylefortextarea = `min-vh-100 pt-5 bg${props.mode} px-5`;
+  const [countText, setCountText] = useState(0);
+  const [emoji, setEmoji] = useState("💖");
+  const [para, setPara] = useState("IDK WHAT IS THIS");
+  const [info, setInfo] = useState({
+    author: "JOE MAMA",
+    title: "WHO IS JOE",
+    url: "https://www.reddit.com/r/copypasta",
+  });
+  const [distate, setDis] = useState(false); 
   const incCount = () => {
     setPara("LOADING... PLEASE FUCKING WAIT.")
     setDis(true);
@@ -41,18 +50,24 @@ export default function About(props) {
         setInfo({author:post['author'], title:post['title'], url:post['permalink']});
         setDis(false);
     });
-   
 }
+ useEffect(() => {
+  debug_count++;
+  if(debug_count == 1){
+    return;
+  }
+   reddit("copypasta").then((post) => {
+     setPara(post["text"]);
+     setInfo({
+       author: post["author"],
+       title: post["title"],
+       url: post["permalink"],
+     });
+     setDis(false);
+   });
+ }, []);
 
-  const [countText, setCountText] = useState(0);
-  const [emoji, setEmoji] = useState("💖");
-  const [para, setPara] = useState("IDK WHAT IS THIS");
-  const [info, setInfo] = useState({
-    author: "JOE MAMA",
-    title: "WHO IS JOE",
-    url: "https://www.reddit.com/r/copypasta",
-  });
-  const [distate, setDis] = useState(false);
+  
   return (
     <div
       data-bs-theme={props.mode}
@@ -80,7 +95,7 @@ export default function About(props) {
           ? "Used 1 time."
           : `Used ${countText} times.`}
       </p>
-      <div className="min vh-100 pt-5 bgdark px-5">
+      <div className={stylefortextarea}>
         <h4 className="text-center mb-4">
           <a href={info["url"]} target="_blank">{info["title"]}</a>
         </h4>

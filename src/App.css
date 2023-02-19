@@ -10,3 +10,8 @@ p {
   background-color: rgb(39, 44, 49);
   border-radius: 10px;
 }
+
+.bglight {
+  background-color: rgb(240, 240, 240);
+  border-radius: 10px;
+}
