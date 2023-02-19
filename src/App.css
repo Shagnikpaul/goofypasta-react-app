@@ -5,3 +5,8 @@ p {
 .moremar {
   margin-top: -40px;
 }
+
+.bgdark {
+  background-color: rgb(39, 44, 49);
+  border-radius: 10px;
+}

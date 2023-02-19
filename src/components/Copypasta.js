@@ -47,7 +47,11 @@ export default function About(props) {
   const [countText, setCountText] = useState(0);
   const [emoji, setEmoji] = useState("💖");
   const [para, setPara] = useState("IDK WHAT IS THIS");
-  const [info, setInfo] = useState({author:"JOE MAMA", title:"WHO IS JOE", url:"www.google.com"});
+  const [info, setInfo] = useState({
+    author: "JOE MAMA",
+    title: "WHO IS JOE",
+    url: "https://www.reddit.com/r/copypasta",
+  });
   const [distate, setDis] = useState(false);
   return (
     <div
@@ -66,25 +70,29 @@ export default function About(props) {
           onClick={incCount}
           disabled={distate}
         >
-          Click here to get a random cursed sentence.
+          Click here to get a random cursed copypasta.
         </button>
       </div>
       <p className="text-center mb-5">
-        {" "}
         {countText === 0
           ? "Press the button! 😳😳"
           : countText === 1
           ? "Used 1 time."
           : `Used ${countText} times.`}
       </p>
-      <div className="">
+      <div className="min vh-100 pt-5 bgdark px-5">
         <h4 className="text-center mb-4">
-          <a href={info["url"]}>{info["title"]}</a>
+          <a href={info["url"]} target="_blank">{info["title"]}</a>
         </h4>
         <figure className="text-center">
           <figcaption className="blockquote-footer">
             {info["author"]}, cited from
-            <cite title="Source Titles"> {"r/copypasta"}</cite>
+            <cite title="Source Titles">
+              {" "}
+              <a href="https://www.reddit.com/r/copypasta" target="_blank">
+                r/copypasta
+              </a>
+            </cite>
           </figcaption>
           <blockquote className="blockquote">
             <p className="text-break">{para}</p>
