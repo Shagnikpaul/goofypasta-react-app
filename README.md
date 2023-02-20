@@ -4,6 +4,7 @@
   <img width="100" src="https://media.tenor.com/TCzfmNLrLVIAAAAj/iloveyou-sweetdreams.giff"><br>
   <h1 align="center">GOOFY PASTA.</h1> 
   <p align="center"><b>A React app that displays random horrible and most abominable sentences ever created by mankind from the <code>r/copypasta</code> subreddit.</b></p>
+<p align="center"><a href="https://goofypasta-react-app.vercel.app/" target="_blank"><b>[CLICK HERE TO USE THE APP]</b></a></p>
 </p>
 <br><br>
 <p align="center"><code>- Stuff used -</code><br><br>
