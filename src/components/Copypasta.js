@@ -27,6 +27,7 @@ export default function About(props) {
   let stylefortextarea = `min-vh-100 pt-5 bg${props.mode} px-5`;
   const [countText, setCountText] = useState(0);
   const [emoji, setEmoji] = useState("💖");
+  const [copybutton, setCopy] = useState("Copy");
   const [para, setPara] = useState("IDK WHAT IS THIS");
   const [info, setInfo] = useState({
     author: "JOE MAMA",
@@ -34,6 +35,18 @@ export default function About(props) {
     url: "https://www.reddit.com/r/copypasta",
   });
   const [distate, setDis] = useState(false); 
+  
+  
+  const copy = () => {
+    navigator.clipboard.writeText(para);
+    setCopy("Copied to clipboard.");
+    setTimeout(copyfunc, 1000)
+  }
+  
+  function copyfunc(){
+    setCopy("Copy")
+  }
+
   const incCount = () => {
     setPara("LOADING... PLEASE FUCKING WAIT.")
     setDis(true);
@@ -97,7 +110,9 @@ export default function About(props) {
       </p>
       <div className={stylefortextarea}>
         <h4 className="text-center mb-4">
-          <a href={info["url"]} target="_blank">{info["title"]}</a>
+          <a href={info["url"]} target="_blank">
+            {info["title"]}
+          </a>
         </h4>
         <figure className="text-center">
           <figcaption className="blockquote-footer">
@@ -109,6 +124,8 @@ export default function About(props) {
               </a>
             </cite>
           </figcaption>
+          <button onClick={copy} className="btn btn-primary p-2 btn-lg mb-5 mt-1">📋 {copybutton}</button>
+          <br></br>
           <blockquote className="blockquote">
             <p className="text-break">{para}</p>
           </blockquote>
